@@ -1,0 +1,11 @@
+FROM golang:1.22.0-bullseye
+
+WORKDIR /app
+
+COPY . .
+
+RUN go test ./parkinglot
+
+RUN go build -o crea
+
+CMD ["./crea", "/app/storage/private/assessment/input.txt"]
